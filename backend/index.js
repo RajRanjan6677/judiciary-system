@@ -12,6 +12,8 @@ import documentRoute from "./routes/document.route.js"
 import logReport from "./routes/log.route.js"
 import path from "path"
 import { startHearingReminderCron } from "./cron/hearingReminderCron.js"
+import hearingRecordRoute from "./routes/hearingRecord.route.js"
+import aiRoute from "./routes/ai.route.js"
 
 dotenv.config()
 const app=express()
@@ -27,7 +29,9 @@ app.use(cookieParser())
 app.use("/api/auth",userRoute)
 app.use("/api/cases",caseRoute)
 app.use("/api/hearing",hearingRoute)
+app.use("/api/hearing-records",hearingRecordRoute)
 app.use("/api/documents",documentRoute)
+app.use("/api/ai", aiRoute)
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 app.use("/api/logs",logReport)
 app.get("/",(req,res)=>{

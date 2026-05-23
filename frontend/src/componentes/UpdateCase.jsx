@@ -5,6 +5,8 @@ import api from '../api/axios';
 import styles from './Case.module.css'; 
 import CaseHearings from './CaseHearings';
 import CaseDocuments from './CaseDocument';
+import HearingRecords from './HearingRecords';
+import AICaseSummary from './AICaseSummary';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable'; // <-- Import it directly like this
 const UpdateCase = () => {
@@ -234,14 +236,26 @@ const UpdateCase = () => {
           Court Details
         </button>
         <button 
+          className={`${styles.tabButton} ${activeTab === 'hearing-records' ? styles.activeTab : ''}`}
+          onClick={() => setActiveTab('hearing-records')}
+        >
+          Hearing Records
+        </button>
+        <button 
           className={`${styles.tabButton} ${activeTab === 'summary' ? styles.activeTab : ''}`}
           onClick={() => setActiveTab('summary')}
         >
-          Case Summary
+          Manual Summary
+        </button>
+        <button 
+          className={`${styles.tabButton} ${activeTab === 'ai-summary' ? styles.activeTab : ''}`}
+          onClick={() => setActiveTab('ai-summary')}
+        >
+          ✨ AI Case Summary
         </button>
       </div>
 
-      {activeTab === 'details' ? (
+      {activeTab === 'details' && (
         <>
           <form className={styles.form} onSubmit={handleSubmit}>
             
@@ -323,7 +337,17 @@ const UpdateCase = () => {
           <CaseHearings caseId={id} userRole={userRole} />
           <CaseDocuments caseId={id} />
         </>
-      ) : (
+      )}
+      
+      {activeTab === 'hearing-records' && (
+          <HearingRecords caseId={id} userRole={userRole} />
+      )}
+
+      {activeTab === 'ai-summary' && (
+          <AICaseSummary caseId={id} userRole={userRole} />
+      )}
+
+      {activeTab === 'summary' && (
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.summaryContainer}>
             <p className={styles.summaryHelpText} style={{ color: '#64748b', marginBottom: '1rem', fontStyle: 'italic' }}>

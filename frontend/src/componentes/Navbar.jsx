@@ -4,21 +4,21 @@ import api from '../api/axios';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
-    const [role,setRole]=useState()
+  const [role, setRole] = useState()
   const navigate = useNavigate();
-      useEffect(()=>{
-          const checkAuth=async ()=>{
-              try {
-                  const res=await api.get("/auth/check")
-                  const role=res.data.role
-                  if(role)
-                      setRole(role)
-              } catch (error) {
-                  console.log("stay")
-              }
-          }
-          checkAuth()
-      },[])
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const res = await api.get("/auth/check")
+        const role = res.data.role
+        if (role)
+          setRole(role)
+      } catch (error) {
+        console.log("stay")
+      }
+    }
+    checkAuth()
+  }, [])
   const handleLogout = async () => {
     try {
       // Assuming you have a logout endpoint to clear cookies/tokens
@@ -84,7 +84,7 @@ const Navbar = () => {
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Emblem_of_the_Supreme_Court_of_India.svg" alt="Supreme Court Logo" className={styles.logoImage} />
         <div className={styles.brandText}>
           <span className={styles.brandHindi}>भारत का सर्वोच्च न्यायालय</span>
-          <span className={styles.brandEnglish}>Supreme Kourt of India</span>
+          <span className={styles.brandEnglish}>Judiciary System</span>
           <span className={styles.brandMotto}>|| यतो धर्मस्ततो जय: ||</span>
         </div>
       </Link>
