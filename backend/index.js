@@ -13,9 +13,8 @@ import logReport from "./routes/log.route.js"
 import path from "path"
 import { startHearingReminderCron } from "./cron/hearingReminderCron.js"
 import hearingRecordRoute from "./routes/hearingRecord.route.js"
-import aiRoute from "./routes/ai.route.js"
+import aiRoute from "./routes/aiRoute.js"
 import analyticsRoute from "./routes/analytics.route.js"
-import caseChatbotRoutes from "./routes/caseChatbotRoutes.js"
 
 dotenv.config()
 const app=express()
@@ -34,7 +33,6 @@ app.use("/api/hearing",hearingRoute)
 app.use("/api/hearing-records",hearingRecordRoute)
 app.use("/api/documents",documentRoute)
 app.use("/api/ai", aiRoute)
-app.use("/api/ai/chatbot", caseChatbotRoutes)
 app.use("/api/analytics", analyticsRoute)
 app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
 app.use("/api/logs",logReport)

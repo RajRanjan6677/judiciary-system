@@ -8,6 +8,7 @@ import CaseDocuments from './CaseDocument';
 import HearingRecords from './HearingRecords';
 import AICaseSummary from './AICaseSummary';
 import CaseChatbot from './CaseChatbot';
+import CaseInclinationScale from './CaseInclinationScale';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable'; // <-- Import it directly like this
 const UpdateCase = () => {
@@ -260,6 +261,12 @@ const UpdateCase = () => {
         >
           🤖 AI Chatbot
         </button>
+        <button 
+          className={`${styles.tabButton} ${activeTab === 'case-inclination' ? styles.activeTab : ''}`}
+          onClick={() => setActiveTab('case-inclination')}
+        >
+          ⚖️ Case Inclination
+        </button>
       </div>
 
       {activeTab === 'details' && (
@@ -356,6 +363,10 @@ const UpdateCase = () => {
 
       {activeTab === 'ai-chatbot' && (
           <CaseChatbot caseId={id} userRole={userRole} />
+      )}
+
+      {activeTab === 'case-inclination' && (
+          <CaseInclinationScale caseId={id} userRole={userRole} />
       )}
 
       {activeTab === 'summary' && (
