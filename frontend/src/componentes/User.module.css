@@ -1,0 +1,188 @@
+/* --- Global Container --- */
+.pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 1rem;
+  background-color: var(--bg-color);
+  min-height: calc(100vh - 70px);
+}
+
+.container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 3rem;
+  border: 1px solid var(--border-color);
+  font-family: var(--font-body);
+}
+
+.heading {
+  margin-top: 0;
+  color: var(--primary-navy);
+  font-size: 1.75rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  font-family: var(--font-heading);
+}
+
+/* --- Form Styles for Add User --- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0 auto 3rem auto; 
+  max-width: 600px; /* Keep form slightly narrower than full container */
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary-navy);
+  font-family: var(--font-body);
+}
+
+.input, .select {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  color: var(--text-dark);
+  background-color: var(--bg-color);
+  transition: all 0.2s ease;
+  font-family: var(--font-body);
+}
+
+.input:focus, .select:focus {
+  outline: none;
+  border-color: var(--gold-accent);
+  background-color: var(--card-bg);
+  box-shadow: 0 0 0 3px rgba(168, 132, 68, 0.15);
+}
+
+.submitBtn {
+  padding: 1rem 1.5rem;
+  background-color: var(--primary-navy);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 1rem;
+  font-family: var(--font-body);
+}
+
+.submitBtn:hover {
+  background-color: #172a63;
+}
+
+.submitBtn:active {
+  transform: scale(0.98);
+}
+
+/* --- Table Styles for All Users --- */
+.tableContainer {
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.userTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: var(--card-bg);
+}
+
+.userTable th, .userTable td {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.userTable th {
+  background-color: var(--bg-color);
+  color: var(--text-light);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.userTable tr {
+  transition: background-color 0.15s ease;
+}
+
+.userTable tr:hover td {
+  background-color: var(--bg-color);
+}
+
+/* --- Role Badges (Modern Soft Pill Style) --- */
+.roleBadge {
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Specific Role Colors */
+.roleBadge.admin { 
+  background-color: #fee2e2; 
+  color: #991b1b; 
+  border: 1px solid #fecaca;
+}
+.roleBadge.clerk { 
+  background-color: #dcfce7; 
+  color: #166534; 
+  border: 1px solid #bbf7d0;
+}
+.roleBadge.lawyer { 
+  background-color: #e0f2fe; 
+  color: #0369a1; 
+  border: 1px solid #bae6fd;
+}
+.roleBadge.judge { 
+  background-color: #f3e8ff;
+  color: #6b21a8; 
+  border: 1px solid #e9d5ff;
+}
+
+/* --- Delete Button (Premium Ghost-Red) --- */
+.deleteBtn {
+  background-color: transparent;
+  color: var(--status-urgent);
+  border: 1px solid var(--status-urgent);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.deleteBtn:hover {
+  background-color: var(--status-urgent);
+  color: white;
+  box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);
+}
+
+.deleteBtn:active {
+  transform: scale(0.95);
+}

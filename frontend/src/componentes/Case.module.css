@@ -1,0 +1,273 @@
+ /* --- Global Container --- */
+.container {
+  max-width: 850px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: var(--card-bg);
+  border-radius: var(--radius-lg);
+  /* Softer, more modern layered shadow */
+  box-shadow: var(--shadow-md);
+  /* Modern system font stack */
+  font-family: var(--font-body);
+  color: var(--text-dark);
+}
+
+.heading {
+  margin-top: 0;
+  color: var(--primary-navy);
+  font-size: 1.75rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* --- Form Elements --- */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.input, .textarea, .select {
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  color: var(--text-dark);
+  background-color: var(--bg-color);
+  transition: all 0.2s ease;
+}
+
+/* Professional focus states (glowing gold ring instead of harsh black outline) */
+.input:focus, .textarea:focus, .select:focus {
+  outline: none;
+  border-color: var(--gold-accent);
+  background-color: var(--card-bg);
+  box-shadow: 0 0 0 3px rgba(168, 132, 68, 0.15);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.5;
+}
+
+/* --- Buttons --- */
+.submitBtn {
+  padding: 0.85rem 1.5rem;
+  background-color: var(--primary-navy);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.submitBtn:hover {
+  background-color: #172a63;
+}
+
+.submitBtn:active {
+  transform: scale(0.98); /* Slight click-down effect */
+}
+
+.submitBtn:disabled {
+  background-color: var(--text-light);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --- Case/Hearing Cards --- */
+.caseCard {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--card-bg);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Subtle lift effect when hovering over a case card */
+.caseCard:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold-accent);
+}
+
+.caseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.caseHeader h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--primary-navy);
+}
+
+/* Sleek modern "Pill" style for the status badge */
+.status {
+  padding: 0.35rem 0.85rem;
+  border-radius: 9999px; /* Perfect rounded pill shape */
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background-color: #e0f2fe; /* Soft light blue */
+  color: #0369a1; /* Dark contrasting blue */
+  border: 1px solid #bae6fd;
+}
+/* --- Search & Filter Bar --- */
+.filterBar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  background-color: var(--bg-color);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  align-items: center;
+  flex-wrap: wrap; /* Ensures it looks good on mobile screens */
+}
+
+.searchInput {
+  flex: 1; /* Takes up the remaining space */
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+}
+
+.filterSelect {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background-color: var(--card-bg);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.searchInput:focus, .filterSelect:focus {
+  outline: none;
+  border-color: var(--gold-accent);
+  box-shadow: 0 0 0 3px rgba(168, 132, 68, 0.15);
+}
+
+.searchBtn {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-navy);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.searchBtn:hover {
+  background-color: #172a63;
+}
+
+.clearBtn {
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  color: var(--text-light);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.clearBtn:hover {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+}
+
+/* Specific Status Badge Colors */
+.status.open { background-color: #dcfce7; color: var(--status-closed); border-color: #bbf7d0; }
+.status.closed { background-color: #fee2e2; color: var(--status-urgent); border-color: #fecaca; }
+.status.pending { background-color: #fef9c3; color: var(--status-pending); border-color: #fef08a; }
+
+/* --- Tabs Styling --- */
+.tabContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.tabButton {
+  background: none;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.tabButton:hover {
+  color: var(--primary-navy);
+}
+
+.activeTab {
+  color: var(--primary-navy);
+}
+
+.activeTab::after {
+  content: '';
+  position: absolute;
+  bottom: -0.65rem;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--gold-accent);
+  border-radius: 3px 3px 0 0;
+}
+
+/* --- Summary Textarea Styling --- */
+.summaryContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.summaryTextarea {
+  width: 100%;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: 1.6;
+  resize: vertical;
+  background-color: #fdfdfd;
+  border: 1px solid var(--border-color);
+}
+.summaryTextarea:focus {
+  border-color: var(--gold-accent);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1); /* light gold focus ring */
+}

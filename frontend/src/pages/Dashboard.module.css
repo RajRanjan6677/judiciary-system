@@ -1,0 +1,289 @@
+ /* --- Global Dashboard Container --- */
+.container {
+  padding: 3rem 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* --- Loading State --- */
+.loading {
+  text-align: center;
+  margin-top: 6rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+}
+
+/* --- Header Section --- */
+.header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 2px solid var(--border-color);
+  text-align: center;
+  width: 100%;
+}
+
+.header h1 {
+  margin: 0;
+  color: var(--primary-navy);
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* --- Grid Layout --- */
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* --- Interactive Action Cards --- */
+.card {
+  flex: 1 1 280px;
+  max-width: 350px;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adds a subtle gold line at the top of the card for a premium touch */
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--gold-accent);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* The Hover "Lift" Effect */
+.card:hover {
+  transform: translateY(-5px); /* Floats the card up */
+  box-shadow: var(--shadow-md); /* Deepens the shadow */
+  border-color: var(--gold-accent);
+}
+
+.card:hover::before {
+  opacity: 1; /* Shows the accent line */
+}
+
+.card:active {
+  transform: translateY(-2px); /* Slight click-down effect */
+}
+
+/* --- Card Typography --- */
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--primary-navy);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.card p {
+  color: var(--text-light);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+}
+/* --- Analytics Section --- */
+.analyticsSection {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+/* --- Quick Stat Cards --- */
+.statsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.statCard {
+  flex: 1 1 200px;
+  max-width: 300px;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.statCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.statCard h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+}
+
+/* Color accents for the stat cards */
+.statOpen .statNumber { color: var(--status-closed); }   /* Green */
+.statPending .statNumber { color: var(--status-pending); } /* Yellow/Orange */
+.statClosed .statNumber { color: var(--status-urgent); }  /* Red */
+
+/* --- Chart Container --- */
+.chartContainer {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chartContainer h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--primary-navy);
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+/* --- Today's Hearings Section --- */
+.todaysHearingsContainer {
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 1200px;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+}
+
+.todaysHearingsContainer h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--primary-navy);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: left;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.noHearings {
+  color: var(--text-light);
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.hearingsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.hearingCard {
+  flex: 1 1 300px;
+  background: #fdfdfd;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--gold-accent);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.hearingCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  border-left-color: var(--primary-navy);
+}
+
+.hearingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.hearingCaseNumber {
+  font-weight: 700;
+  color: var(--primary-navy);
+  font-size: 0.95rem;
+}
+
+.hearingStatus {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.75rem;
+  background-color: var(--bg-main);
+  border-radius: var(--radius-full);
+  color: var(--text-dark);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hearingTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.15rem;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.hearingRemarks {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
