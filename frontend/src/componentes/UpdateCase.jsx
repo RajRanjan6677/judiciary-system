@@ -7,6 +7,7 @@ import CaseHearings from './CaseHearings';
 import CaseDocuments from './CaseDocument';
 import HearingRecords from './HearingRecords';
 import AICaseSummary from './AICaseSummary';
+import CaseChatbot from './CaseChatbot';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable'; // <-- Import it directly like this
 const UpdateCase = () => {
@@ -253,6 +254,12 @@ const UpdateCase = () => {
         >
           ✨ AI Case Summary
         </button>
+        <button 
+          className={`${styles.tabButton} ${activeTab === 'ai-chatbot' ? styles.activeTab : ''}`}
+          onClick={() => setActiveTab('ai-chatbot')}
+        >
+          🤖 AI Chatbot
+        </button>
       </div>
 
       {activeTab === 'details' && (
@@ -345,6 +352,10 @@ const UpdateCase = () => {
 
       {activeTab === 'ai-summary' && (
           <AICaseSummary caseId={id} userRole={userRole} />
+      )}
+
+      {activeTab === 'ai-chatbot' && (
+          <CaseChatbot caseId={id} userRole={userRole} />
       )}
 
       {activeTab === 'summary' && (

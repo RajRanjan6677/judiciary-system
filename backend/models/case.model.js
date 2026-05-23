@@ -63,6 +63,11 @@ const caseSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
+    caseCategory: {
+        type: String,
+        enum: ["UAPA", "Rape", "POCSO", "Murder", "Civil", "Property", "Family", "Criminal", "Other"],
+        default: "Other"
+    },
     lawyerId: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

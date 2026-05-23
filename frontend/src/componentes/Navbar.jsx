@@ -100,6 +100,7 @@ const Navbar = () => {
             <Link to="/admin/all-users" className={styles.link}>All Users</Link>
             <Link to="/admin/add-lawyer" className={styles.link}>Add User</Link>
             <Link to="/admin/logs" className={styles.link}>System logs</Link>
+            <Link to="/admin/smart-priority" className={styles.link}>Smart Priority</Link>
             {/* <Link to="/admin/case-update" className={styles.link}>Update Case</Link> */}
           </>
         )}
@@ -113,6 +114,7 @@ const Navbar = () => {
             <Link to="/clerk/all-cases" className={styles.link}>All Cases</Link>
             <Link to="/clerk/all-lawyers" className={styles.link}>All Lawyers</Link>
             <Link to="/clerk/add-lawyer" className={styles.link}>Add Lawyer</Link>
+            <Link to="/clerk/smart-priority" className={styles.link}>Smart Priority</Link>
             {/* <Link to="/clerk/case-update" className={styles.link}>Update Case</Link> */}
           </>
         )}
@@ -123,6 +125,7 @@ const Navbar = () => {
             <Link to="/lawyer" className={styles.link}>Dashboard</Link>
             <Link to="/lawyer/assigned-cases" className={styles.link}>Assigned Cases</Link>
             <Link to="/lawyer/hearing-date" className={styles.link}>Hearing Dates</Link>
+            <Link to="/lawyer/smart-priority" className={styles.link}>Smart Priority</Link>
             {/* <Link to="/lawyer/case-update" className={styles.link}>Update Case</Link> */}
             {/* <Link to="/lawyer/document-upload" className={styles.link}>Upload Docs</Link> */}
           </>
@@ -134,6 +137,7 @@ const Navbar = () => {
             <Link to="/judge/all-cases" className={styles.link}>All Cases</Link>
             <Link to="/judge/hearings" className={styles.link}>Hearing Schedule</Link>
             <Link to="/judge/logs" className={styles.link}>Case logs</Link>
+            <Link to="/judge/smart-priority" className={styles.link}>Smart Priority</Link>
           </>
         )}
 
